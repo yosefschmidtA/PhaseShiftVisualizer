@@ -104,7 +104,7 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
 
 
 # Main program
-filename = "bcc_001.txt"
+filename = "arquivomodelo.txt"
 lattice_constant, a1, a2, a3, atom_data = read_unit_cell(filename)
 
 replicated_positions = replicate_atoms(atom_data, a1, a2, a3, nx=2, ny=2, nz=1)
