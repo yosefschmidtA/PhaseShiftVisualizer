@@ -1,0 +1,24 @@
+BatiO3                          ...BULK
+  7.556                         #SPA=Cu-Cu distance (a.u.)
+  1.0000  0.0000  0.0000        #Coordinates of unit cell(SPA units)
+  0.0000  1.0000  0.0000
+  0.0000  0.0000  9.5000        #Notice the value 1.41 (bulk calculation)
+   3                            #number of ineq. atoms in this file (NINEQ)
+Ba substitucional layer         #NAME
+   2 56.0000  0.0000  4.06      #ATOMS in Unit Cell,Z,Valence,Muffin Radius (a.u.)
+  0.0000  0.0000  0.0000        #A
+  0.0000  0.0000 -1.0093
+O
+   4 8.0000   0.0000  1.13
+  0.5000  0.5000 -0.0085        #A
+  0.5000  0.0000 -0.5167        #B
+  0.0000  0.5000 -0.5167
+  0.0000  0.0000 -1.0178
+Ti
+   1 22.0000  0.0000  2.64
+  0.5000  0.5000 -0.4817
+   3                            #NFORM=2,1,0(output ready for rel,wil or cav)
+  0.7063                       #ALPHA (FOR HARTREE TYPE EXCHANGE TERM)
+  10                            #NH (for estimating muffin tin zero)
+
+
