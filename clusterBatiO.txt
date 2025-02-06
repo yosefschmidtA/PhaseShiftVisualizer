@@ -1,5 +1,5 @@
 BatiO3                          ...BULK
-  7.556                         #SPA=Cu-Cu distance (a.u.)
+  7.556                         #SPA=Cu-Cu distance (a.u.= 0.5292Angs)
   1.0000  0.0000  0.0000        #Coordinates of unit cell(SPA units)
   0.0000  1.0000  0.0000
   0.0000  0.0000  9.5000        #Notice the value 1.41 (bulk calculation)

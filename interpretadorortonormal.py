@@ -103,11 +103,11 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
 
     def set_axes_fixed(ax, length=15):
         """Define os limites fixos dos eixos de 0 a 'length' Å."""
-        ax.set_xlim(-0.5, length)
-        ax.set_ylim(-0.5, length)
-        ax.set_zlim(-0.5, 0.75)
+        ax.set_xlim(0, 1.5)
+        ax.set_ylim(0, 1.5)
+        ax.set_zlim(-0.4, 0.1)
 
-    set_axes_fixed(ax, length=1.2)
+    set_axes_fixed(ax, length=1)
 
     plt.show()
 
@@ -116,7 +116,7 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
 filename = "Ga2O3.txt"
 lattice_constant, a1, a2, a3, atom_data = read_unit_cell(filename)
 
-replicated_positions = replicate_atoms(atom_data, a1, a2, a3, nx=1, ny=1, nz=1)
+replicated_positions = replicate_atoms(atom_data, a1, a2, a3, nx=2, ny=2, nz=1)
 
 view_orientation = '001'
 plot_unit_cell(replicated_positions, a1, a2, a3, view_orientation=view_orientation)
