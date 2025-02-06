@@ -67,7 +67,7 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
     ax = fig.add_subplot(111, projection='3d')
 
     colors = {'H': 'lightgray', 'He': 'cyan', 'Li': 'red', 'Be': 'darkgreen', 'B': 'brown', 'C': 'black', 'N': 'blue',
-              'O': 'red', 'F': 'green', 'Ne': 'cyan', 'Na': 'blue', 'Mg': 'green', 'Al': 'gray', 'Si': 'yellow',
+              'O': 'blue', 'F': 'green', 'Ne': 'cyan', 'Na': 'blue', 'Mg': 'green', 'Al': 'gray', 'Si': 'yellow',
               'P': 'orange',
               'S': 'yellow', 'Cl': 'green', 'Ar': 'cyan', 'K': 'purple', 'Ca': 'darkgray', 'Sc': 'pink', 'Ti': 'silver',
               'V': 'gray', 'Cr': 'gray', 'Mn': 'purple', 'Fe': 'brown', 'Co': 'blue', 'Ni': 'green', 'Cu': 'orange',
@@ -100,14 +100,23 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
     ax.set_ylabel('Y-axis')
     ax.set_zlabel('Z-axis')
     plt.legend()
+
+    def set_axes_fixed(ax, length=15):
+        """Define os limites fixos dos eixos de 0 a 'length' Å."""
+        ax.set_xlim(-0.5, length)
+        ax.set_ylim(-0.5, length)
+        ax.set_zlim(-0.5, 0.75)
+
+    set_axes_fixed(ax, length=1.2)
+
     plt.show()
 
 
 # Main program
-filename = "arquivomodelo.txt"
+filename = "Ga2O3.txt"
 lattice_constant, a1, a2, a3, atom_data = read_unit_cell(filename)
 
-replicated_positions = replicate_atoms(atom_data, a1, a2, a3, nx=2, ny=2, nz=1)
+replicated_positions = replicate_atoms(atom_data, a1, a2, a3, nx=1, ny=1, nz=1)
 
 view_orientation = '001'
 plot_unit_cell(replicated_positions, a1, a2, a3, view_orientation=view_orientation)
