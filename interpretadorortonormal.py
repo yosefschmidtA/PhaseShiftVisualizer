@@ -62,16 +62,16 @@ def replicate_atoms(atom_data, a1, a2, a3, nx=3, ny=3, nz=3):
     return replicated_data
 
 
-def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
+def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='100'):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
 
     colors = {'H': 'lightgray', 'He': 'cyan', 'Li': 'red', 'Be': 'darkgreen', 'B': 'brown', 'C': 'black', 'N': 'blue',
-              'O': 'blue', 'F': 'green', 'Ne': 'cyan', 'Na': 'blue', 'Mg': 'green', 'Al': 'gray', 'Si': 'yellow',
+              'O': 'red', 'F': 'green', 'Ne': 'cyan', 'Na': 'blue', 'Mg': 'green', 'Al': 'gray', 'Si': 'yellow',
               'P': 'orange',
               'S': 'yellow', 'Cl': 'green', 'Ar': 'cyan', 'K': 'purple', 'Ca': 'darkgray', 'Sc': 'pink', 'Ti': 'silver',
               'V': 'gray', 'Cr': 'gray', 'Mn': 'purple', 'Fe': 'brown', 'Co': 'blue', 'Ni': 'green', 'Cu': 'orange',
-              'Zn': 'lightblue', 'Ga': 'red', 'Ge': 'darkgray', 'As': 'blue', 'Se': 'brown', 'Br': 'red', 'Kr': 'cyan'}
+              'Zn': 'lightblue', 'Ga': 'green', 'Ge': 'darkgray', 'As': 'blue', 'Se': 'brown', 'Br': 'red', 'Kr': 'cyan'}
 
     for element, positions in atom_data.items():
         color = colors.get(element, 'k')
@@ -93,12 +93,14 @@ def plot_unit_cell(atom_data, a1, a2, a3, view_orientation='001'):
         ax.view_init(elev=30, azim=45)
     elif view_orientation == '110':
         ax.view_init(elev=60, azim=45)
+    elif view_orientation == '100':
+        ax.view_init(elev=0, azim=0)
     else:
         ax.view_init(elev=20, azim=30)
 
-    ax.set_xlabel('X-axis')
-    ax.set_ylabel('Y-axis')
-    ax.set_zlabel('Z-axis')
+    ax.set_xlabel('axis')
+    ax.set_ylabel('axis')
+    ax.set_zlabel('axis')
     plt.legend()
 
     def set_axes_fixed(ax, length=15):
